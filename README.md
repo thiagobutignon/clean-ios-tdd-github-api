@@ -18,20 +18,32 @@ conter os seguintes elementos:
     * Texto de Descrição do issue
     * Avatar do usuário que criou a issue
     * Data de criação
-    * Um botão que abre o browser com o link issue do site do github
+    * Um botão que abre o browser com o link issue no site do github
 
-## Requisitos
+## Requisitos obrigatórios
 
-* Ser escrito em Swift
-* Clean Architecture (MVP ou MVVM)
+* Swift
+* Testes unitários
+
+## Sugestões de construção:
+* Projeto em MVP ou MVVM
 * View Code
-* Testes Unitários (preferencialmente com Quick, Nimble, Cuckoo e OHHTTPStubs)
-* Preferencialmente uso de Alamofire/Moya
+
+## Sugestões de frameworks:
+* Para testes unitários: Quick, Nimble, Cuckoo e OHHTTPStubs
+* Uso dos Frameworks Alamofire/Moya
 
 ## Pontos de avaliação
 
-* Como você organiza seus arquivos, métodos, nomeia variáveis, lida com o seu
-código como um todo são pontos observados. Seja cuidadoso, utilize boas
-práticas e padrões.
-* Siga o guideline da Apple, bem como respeite as boas práticas do Swift.
-* Codifique como você gostaria de trabalhar.
+* Como você organiza seus arquivos, métodos, nomeia variáveis, faz separações de 
+responsabilidade, e lida com o seu código como um todo
+* Tratamento das requisições: como você trata os dados recebidos, erros de
+requisição e verificação de conexão de internet
+* Layout: Como você constrói os layouts, tratamento e disposição dos
+componentes da view
+* Testes unitários: Como você daria cobertura de partes importantes do projeto
+* Testes de UI são um adicional
+
+Seja cuidadoso e utilize boas práticas e padrões.
+Siga o guideline da Apple, bem como respeite as boas práticas de Swift.
+Codifique como você gostaria de trabalhar.
