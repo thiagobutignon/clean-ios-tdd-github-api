@@ -40,6 +40,13 @@ class RemoteGetIssuesTests: XCTestCase {
         })
     }
     
+    func test_get_should_complete_with_error_if_cliente_completes_with_invalid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        expect(sut, completeWith: .failure(.unexpected), when: {
+            httpClientSpy.completeWithSuccess(makeInvalidData())
+        })
+    }
+    
 }
 
 extension RemoteGetIssuesTests {
