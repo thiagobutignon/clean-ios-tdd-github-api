@@ -37,4 +37,21 @@ extension AlamofireAdapterTests {
         wait(for: [exp], timeout: 1)
         action(request!)
     }
+    
+    func expectResult(_ expectedResult: Result<Data?, HttpError>, when stub: (data: Data?, response: HTTPURLResponse?, error: Error?), file: StaticString = #file, line: UInt = #line) {
+        let sut = makeSut()
+        UrlProtocolStub.simulate(data: stub.data, response: stub.response, error: stub.error)
+        let exp = expectation(description: "waiting")
+        sut.get(to: makeUrl()) { receivedResult in
+            switch (expectedResult, receivedResult) {
+                case (.failure(let expectedError), .failure(let receivedError)):
+                    XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+                case (.success(let expectedData), .success(let receivedData)):
+                    XCTAssertEqual(expectedData, receivedData, file: file, line: line)
+                default: XCTFail("Expected \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
 }
