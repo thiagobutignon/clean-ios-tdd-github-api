@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Issues {
+public protocol GetIssues {
     typealias Result = Swift.Result<IssuesModelResult, DomainError>
     func get(completion: @escaping (Result) -> Void)
 }
