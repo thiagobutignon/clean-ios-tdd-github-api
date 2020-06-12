@@ -19,6 +19,7 @@
 		8397B1B52493F9E300976FF1 /* DomainErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1B42493F9E300976FF1 /* DomainErrors.swift */; };
 		8397B1C42493FAD500976FF1 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1BB2493FAD500976FF1 /* Data.framework */; };
 		8397B1C92493FAD500976FF1 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1C82493FAD500976FF1 /* DataTests.swift */; };
+		8397B1D62493FB9E00976FF1 /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1D52493FB9E00976FF1 /* HttpGetClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8397B1C32493FAD500976FF1 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8397B1C82493FAD500976FF1 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		8397B1CA2493FAD500976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8397B1D52493FB9E00976FF1 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		8397B1D32493FB1100976FF1 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				8397B1D52493FB9E00976FF1 /* HttpGetClient.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 					};
 					8397B1BA2493FAD500976FF1 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					8397B1C22493FAD500976FF1 = {
 						CreatedOnToolsVersion = 11.5;
@@ -350,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8397B1D62493FB9E00976FF1 /* HttpGetClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +431,7 @@
 		8397B1CD2493FAD500976FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -443,6 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -450,6 +457,7 @@
 		8397B1CE2493FAD500976FF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -474,6 +482,7 @@
 		8397B1D02493FAD500976FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 95Y9ZH46LB;
@@ -492,6 +501,7 @@
 		8397B1D12493FAD500976FF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 95Y9ZH46LB;
