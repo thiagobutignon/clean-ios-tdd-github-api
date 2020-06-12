@@ -34,6 +34,12 @@ class AlamofireAdapterTests: XCTestCase {
     func test_get_should_make_request_with_data_when_request_completes_with_200() {
         expectResult(.success(makeValidData()), when: (data: makeValidData(), response: makeHttpResponse(), error: nil))
     }
+    
+    func test_get_should_make_request_with_data_when_request_completes_with_204() {
+        expectResult(.success(nil), when: (data: nil, response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: makeEmptyData(), response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 204), error: nil))
+    }
 
 }
 
