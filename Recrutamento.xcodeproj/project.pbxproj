@@ -80,9 +80,9 @@
 		8397B1882493E5B800976FF1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8397B19E2493E7C500976FF1 /* UseCases */,
 				8397B1A02493E7DF00976FF1 /* Errors */,
 				8397B19F2493E7DC00976FF1 /* Model */,
-				8397B19E2493E7C500976FF1 /* UseCases */,
 				8397B18A2493E5B800976FF1 /* Info.plist */,
 			);
 			path = Domain;
@@ -130,6 +130,9 @@
 		8397B1BC2493FAD500976FF1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8397B1D42493FB1600976FF1 /* UseCases */,
+				8397B1D32493FB1100976FF1 /* Http */,
+				8397B1D22493FB0600976FF1 /* Helpers */,
 				8397B1BE2493FAD500976FF1 /* Info.plist */,
 			);
 			path = Data;
@@ -142,6 +145,27 @@
 				8397B1CA2493FAD500976FF1 /* Info.plist */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		8397B1D22493FB0600976FF1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8397B1D32493FB1100976FF1 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		8397B1D42493FB1600976FF1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		83E9922E2493E33700127B14 = {

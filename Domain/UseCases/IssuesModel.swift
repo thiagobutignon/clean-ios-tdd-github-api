@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Issues {
     typealias Result = Swift.Result<IssuesModelResult, DomainError>
-    func get(issuesModel: IssuesModel, completion: @escaping (Result) -> Void)
+    func get(completion: @escaping (Result) -> Void)
 }
 
 public struct IssuesModel: Model {
