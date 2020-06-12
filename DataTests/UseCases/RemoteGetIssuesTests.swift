@@ -55,9 +55,7 @@ class RemoteGetIssuesTests: XCTestCase {
         sut = nil
         httpClientSpy.completeWithError(.noConnectivity)
         XCTAssertNil(result)
-        
     }
-    
 }
 
 extension RemoteGetIssuesTests {
