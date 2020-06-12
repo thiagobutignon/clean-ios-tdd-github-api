@@ -33,6 +33,7 @@
 		8397B20F249445C800976FF1 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B20E249445C800976FF1 /* AlamofireAdapter.swift */; };
 		8397B2112494473D00976FF1 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B2102494473D00976FF1 /* UrlProtocolStub.swift */; };
 		8397B2122494496C00976FF1 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E82493FF8000976FF1 /* TestExtension.swift */; };
+		8397B214249449D300976FF1 /* TestDataFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1EA2493FFAF00976FF1 /* TestDataFactories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -595,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8397B214249449D300976FF1 /* TestDataFactories.swift in Sources */,
 				8397B201249440F000976FF1 /* AlamofireAdapterTests.swift in Sources */,
 				8397B2122494496C00976FF1 /* TestExtension.swift in Sources */,
 				8397B2112494473D00976FF1 /* UrlProtocolStub.swift in Sources */,

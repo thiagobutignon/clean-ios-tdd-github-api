@@ -25,4 +25,16 @@ extension AlamofireAdapterTests {
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
+    
+    func testRequestFor(url: URL = makeUrl(), action: @escaping (URLRequest) -> Void) {
+        let sut = makeSut()
+        let exp = expectation(description: "waiting")
+        sut.get(to: url) { _ in
+            exp.fulfill()
+        }
+        var request: URLRequest?
+        UrlProtocolStub.observerRequest { request = $0 }
+        wait(for: [exp], timeout: 1)
+        action(request!)
+    }
 }
