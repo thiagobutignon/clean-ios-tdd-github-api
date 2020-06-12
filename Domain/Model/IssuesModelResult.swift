@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public struct IssuesModelResult: Model {
+    public var issues: [IssueModelResult]
+    
+    public init(issues: [IssueModelResult]) {
+        self.issues = issues
+    }
+}
+
+
