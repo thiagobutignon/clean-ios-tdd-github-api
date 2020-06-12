@@ -28,10 +28,11 @@
 		8397B1EB2493FFAF00976FF1 /* TestDataFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1EA2493FFAF00976FF1 /* TestDataFactories.swift */; };
 		8397B1ED249400CC00976FF1 /* IssueModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1EC249400CC00976FF1 /* IssueModelFactory.swift */; };
 		8397B1FC249440F000976FF1 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1F3249440F000976FF1 /* Infra.framework */; };
-		8397B201249440F000976FF1 /* InfraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B200249440F000976FF1 /* InfraTests.swift */; };
+		8397B201249440F000976FF1 /* AlamofireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B200249440F000976FF1 /* AlamofireAdapterTests.swift */; };
 		8397B20C2494459100976FF1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8397B20B2494459100976FF1 /* Alamofire */; };
 		8397B20F249445C800976FF1 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B20E249445C800976FF1 /* AlamofireAdapter.swift */; };
 		8397B2112494473D00976FF1 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B2102494473D00976FF1 /* UrlProtocolStub.swift */; };
+		8397B2122494496C00976FF1 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E82493FF8000976FF1 /* TestExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +100,7 @@
 		8397B1F3249440F000976FF1 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8397B1F6249440F000976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8397B1FB249440F000976FF1 /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8397B200249440F000976FF1 /* InfraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraTests.swift; sourceTree = "<group>"; };
+		8397B200249440F000976FF1 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		8397B202249440F000976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8397B20E249445C800976FF1 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		8397B2102494473D00976FF1 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
@@ -288,7 +289,7 @@
 		8397B1FF249440F000976FF1 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
-				8397B200249440F000976FF1 /* InfraTests.swift */,
+				8397B200249440F000976FF1 /* AlamofireAdapterTests.swift */,
 				8397B2102494473D00976FF1 /* UrlProtocolStub.swift */,
 				8397B202249440F000976FF1 /* Info.plist */,
 			);
@@ -594,7 +595,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8397B201249440F000976FF1 /* InfraTests.swift in Sources */,
+				8397B201249440F000976FF1 /* AlamofireAdapterTests.swift in Sources */,
+				8397B2122494496C00976FF1 /* TestExtension.swift in Sources */,
 				8397B2112494473D00976FF1 /* UrlProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
