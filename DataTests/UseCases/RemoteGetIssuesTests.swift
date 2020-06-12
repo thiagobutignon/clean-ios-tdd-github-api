@@ -47,6 +47,17 @@ class RemoteGetIssuesTests: XCTestCase {
         })
     }
     
+    func test_get_should_not_complete_if_sut_has_been_deallocated() {
+        let httpClientSpy = HttpClientSpy()
+        var sut: RemoteGetIssues? = RemoteGetIssues(url: makeUrl(), httpClient: httpClientSpy)
+        var result: Result<IssuesModelResult, DomainError>?
+        sut?.get(completion: { result = $0 })
+        sut = nil
+        httpClientSpy.completeWithError(.noConnectivity)
+        XCTAssertNil(result)
+        
+    }
+    
 }
 
 extension RemoteGetIssuesTests {
