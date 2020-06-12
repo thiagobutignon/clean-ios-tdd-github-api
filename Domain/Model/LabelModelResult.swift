@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LabelResult: Model {
+public struct LabelModelResult: Model {
     public var id: Int
     public var nodeID: String
     public var url: String

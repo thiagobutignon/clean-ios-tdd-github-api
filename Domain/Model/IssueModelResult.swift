@@ -20,11 +20,11 @@ public struct IssueModelResult: Model {
     public var number: Int
     public var title: String
     public var user: UserModelResult
-    public var labels: [LabelResult]
+    public var labels: [LabelModelResult]
     public var state: String
     public var locked: Bool
-    public var assignee: AssigneeResult
-    public var assignees: [AssigneeResult]
+    public var assignee: UserModelResult
+    public var assignees: [UserModelResult]
     public var milestone: String
     public var comments: Int
     public var createdAt: String
@@ -61,7 +61,7 @@ public struct IssueModelResult: Model {
         case pullRequest = "pull_request"
     }
     
-    public init(url: String, repositoryURL: String, labelsURL: String, commentsURL: String, eventsURL: String, htmlURL: String, id: Int, nodeID: String, number: Int, title: String, user: UserModelResult, labels: [LabelResult], state: String, locked: Bool, assignee: AssigneeResult, assignees: [AssigneeResult], milestone: String, comments: Int, createdAt: String, updatedAt: String, closedAt: String, authorAssociation: String, activeLockReason: String, pullRequest: PullRequestResult) {
+    public init(url: String, repositoryURL: String, labelsURL: String, commentsURL: String, eventsURL: String, htmlURL: String, id: Int, nodeID: String, number: Int, title: String, user: UserModelResult, labels: [LabelModelResult], state: String, locked: Bool, assignee: UserModelResult, assignees: [UserModelResult], milestone: String, comments: Int, createdAt: String, updatedAt: String, closedAt: String, authorAssociation: String, activeLockReason: String, pullRequest: PullRequestResult) {
         self.url = url
         self.repositoryURL = repositoryURL
         self.labelsURL = labelsURL

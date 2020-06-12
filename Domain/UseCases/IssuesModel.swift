@@ -14,9 +14,9 @@ public protocol GetIssues {
 }
 
 public struct IssuesModel: Model {
-    public var issues: [Issue]
+    public var issues: [IssueModelResult]
     
-    public init(issues: [Issue]) {
+    public init(issues: [IssueModelResult]) {
         self.issues = issues
     }
 }
