@@ -1,15 +1,15 @@
 //
-//  DomainTests.swift
-//  DomainTests
+//  DataTests.swift
+//  DataTests
 //
 //  Created by Thiago B Claramunt on 12/06/20.
 //  Copyright © 2020 Thiago B Claramunt. All rights reserved.
 //
 
 import XCTest
-@testable import Domain
+@testable import Data
 
-class DomainTests: XCTestCase {
+class DataTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
