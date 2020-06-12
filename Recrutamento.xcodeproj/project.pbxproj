@@ -26,6 +26,8 @@
 		8397B1DE2493FC6D00976FF1 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1872493E5B800976FF1 /* Domain.framework */; };
 		8397B1DF2493FC6D00976FF1 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1872493E5B800976FF1 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8397B1E72493FE9500976FF1 /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E62493FE9500976FF1 /* HttpClientSpy.swift */; };
+		8397B1E92493FF8000976FF1 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E82493FF8000976FF1 /* TestExtension.swift */; };
+		8397B1EB2493FFAF00976FF1 /* TestDataFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1EA2493FFAF00976FF1 /* TestDataFactories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		8397B1D92493FC3500976FF1 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		8397B1DB2493FC5600976FF1 /* RemoteGetIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssues.swift; sourceTree = "<group>"; };
 		8397B1E62493FE9500976FF1 /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		8397B1E82493FF8000976FF1 /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
+		8397B1EA2493FFAF00976FF1 /* TestDataFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataFactories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 		8397B1E32493FE7200976FF1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8397B1E82493FF8000976FF1 /* TestExtension.swift */,
+				8397B1EA2493FFAF00976FF1 /* TestDataFactories.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -435,7 +441,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8397B1EB2493FFAF00976FF1 /* TestDataFactories.swift in Sources */,
 				8397B1C92493FAD500976FF1 /* DataTests.swift in Sources */,
+				8397B1E92493FF8000976FF1 /* TestExtension.swift in Sources */,
 				8397B1E72493FE9500976FF1 /* HttpClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
