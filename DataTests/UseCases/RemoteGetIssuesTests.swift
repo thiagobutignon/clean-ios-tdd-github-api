@@ -25,6 +25,13 @@ class RemoteGetIssuesTests: XCTestCase {
         XCTAssertNotNil(getIssuesModel)
     }
     
+    func test_get_should_complete_with_error_if_client_completes_with_error() {
+        let (sut, httpClientSpy) = makeSut()
+        expect(sut, completeWith: .failure(.unexpected), when: {
+            httpClientSpy.completeWithError(.noConnectivity)
+        })
+    }
+    
 }
 
 extension RemoteGetIssuesTests {
