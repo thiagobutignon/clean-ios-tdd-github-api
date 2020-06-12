@@ -20,7 +20,7 @@ class RemoteGetIssuesTests: XCTestCase {
     
     func test_get_should_call_httpClient_and_get_data() {
         let (sut, _) = makeSut()
-        let getIssuesModel = makeIssuesModel()
+        let getIssuesModel = makeGetIssueModelResult()
         sut.get { _ in }
         XCTAssertNotNil(getIssuesModel)
     }
@@ -29,6 +29,14 @@ class RemoteGetIssuesTests: XCTestCase {
         let (sut, httpClientSpy) = makeSut()
         expect(sut, completeWith: .failure(.unexpected), when: {
             httpClientSpy.completeWithError(.noConnectivity)
+        })
+    }
+    
+    func test_get_should_complete_with_issues_if_client_completes_with_valid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let issues = makeIssuesModelResult()
+        expect(sut, completeWith: .success(issues), when:  {
+            httpClientSpy.completeWithSuccess(issues.toData()!)
         })
     }
     

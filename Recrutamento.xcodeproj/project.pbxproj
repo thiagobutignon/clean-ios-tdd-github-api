@@ -186,6 +186,7 @@
 		8397B1D22493FB0600976FF1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8397B1D92493FC3500976FF1 /* ExtensionHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,7 +196,6 @@
 			children = (
 				8397B1D52493FB9E00976FF1 /* HttpGetClient.swift */,
 				8397B1D72493FC0E00976FF1 /* HttpError.swift */,
-				8397B1D92493FC3500976FF1 /* ExtensionHelpers.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";

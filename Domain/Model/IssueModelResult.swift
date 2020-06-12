@@ -33,6 +33,7 @@ public struct IssueModelResult: Model {
     public var authorAssociation: String
     public var activeLockReason: String
     public var pullRequest: PullRequestResult
+    public var body: String
     
     enum CodingKeys: String, CodingKey {
         case url
@@ -59,9 +60,10 @@ public struct IssueModelResult: Model {
         case authorAssociation = "author_association"
         case activeLockReason = "active_lock_reason"
         case pullRequest = "pull_request"
+        case body
     }
     
-    public init(url: String, repositoryURL: String, labelsURL: String, commentsURL: String, eventsURL: String, htmlURL: String, id: Int, nodeID: String, number: Int, title: String, user: UserModelResult, labels: [LabelModelResult], state: String, locked: Bool, assignee: UserModelResult, assignees: [UserModelResult], milestone: String, comments: Int, createdAt: String, updatedAt: String, closedAt: String, authorAssociation: String, activeLockReason: String, pullRequest: PullRequestResult) {
+    public init(url: String, repositoryURL: String, labelsURL: String, commentsURL: String, eventsURL: String, htmlURL: String, id: Int, nodeID: String, number: Int, title: String, user: UserModelResult, labels: [LabelModelResult], state: String, locked: Bool, assignee: UserModelResult, assignees: [UserModelResult], milestone: String, comments: Int, createdAt: String, updatedAt: String, closedAt: String, authorAssociation: String, activeLockReason: String, pullRequest: PullRequestResult, body: String) {
         self.url = url
         self.repositoryURL = repositoryURL
         self.labelsURL = labelsURL
@@ -86,5 +88,6 @@ public struct IssueModelResult: Model {
         self.authorAssociation = authorAssociation
         self.activeLockReason = activeLockReason
         self.pullRequest = pullRequest
+        self.body = body
     }
 }
