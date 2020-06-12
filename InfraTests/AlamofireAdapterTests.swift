@@ -17,6 +17,10 @@ class AlamofireAdapterTests: XCTestCase {
             XCTAssertNil(request.httpBodyStream)
         }
     }
+    
+    func test_get_should_make_request_with_error_when_request_completes_with_error() {
+        expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: makeError()))
+    }
 
 }
 
