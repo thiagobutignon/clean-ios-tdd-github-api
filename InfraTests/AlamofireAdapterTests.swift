@@ -12,7 +12,11 @@ import Infra
 import Alamofire
 
 class AlamofireAdapterTests: XCTestCase {
-
+    func test_get_should_make_request_with_no_data() {
+        testRequestFor(url: makeUrl()) { request in
+            XCTAssertNil(request.httpBodyStream)
+        }
+    }
 
 }
 
