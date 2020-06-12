@@ -18,6 +18,13 @@ class RemoteGetIssuesTests: XCTestCase {
         XCTAssertEqual(httpClientSpy.urls, [url])
     }
     
+    func test_get_should_call_httpClient_and_get_data() {
+        let (sut, _) = makeSut()
+        let getIssuesModel = makeIssuesModel()
+        sut.get { _ in }
+        XCTAssertNotNil(getIssuesModel)
+    }
+    
 }
 
 extension RemoteGetIssuesTests {
