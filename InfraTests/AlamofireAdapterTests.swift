@@ -30,6 +30,10 @@ class AlamofireAdapterTests: XCTestCase {
         expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHttpResponse(), error: nil))
         expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: nil))
     }
+    
+    func test_get_should_make_request_with_data_when_request_completes_with_200() {
+        expectResult(.success(makeValidData()), when: (data: makeValidData(), response: makeHttpResponse(), error: nil))
+    }
 
 }
 
