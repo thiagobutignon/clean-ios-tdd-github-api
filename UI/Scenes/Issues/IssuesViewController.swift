@@ -27,6 +27,8 @@ public final class IssuesViewController: UIViewController, Storyboarded {
         title = "Issues - Swift"
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let viewModel = IssuesRequest(id: 0, title: "title", state: "open", number: 0)
+        loadIssues?(viewModel)
     }
 }
 
@@ -69,6 +71,8 @@ extension IssuesViewController: UITableViewDataSource, UITableViewDelegate {
 extension IssuesViewController: DisplayIssuesView {
     public func showIssues(viewModel: DisplayIssuesViewModel) {
         self.viewModel = viewModel
+        
+        
         tableView.reloadData()
     }
 }

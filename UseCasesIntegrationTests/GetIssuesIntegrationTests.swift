@@ -38,7 +38,7 @@ class GetIssuesIntegrationTests: XCTestCase {
     
     func test_get_error() {
         let alamofireAdapter = AlamofireAdapter()
-        let url: URL = URL(string: "api.github.com/repos/apple/swift/issues")!
+        let url: URL = URL(string: "https://api.github.com/repos/apple/swift/issues")!
         let sut = RemoteGetIssues(url: url, httpClient: alamofireAdapter)
         
         let exp = expectation(description: "waiting")
