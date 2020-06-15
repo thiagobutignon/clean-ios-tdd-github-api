@@ -38,6 +38,28 @@ class IssuesPresenterTests: XCTestCase {
         getIssuesSpy.completeWithIssue(makeIssueModel().issues)
         wait(for: [exp], timeout: 1)
     }
+    
+    func test_get_issues_should_show_loading_before_and_after_show() {
+        let loadingViewSpy = LoadingViewSpy()
+        let getIssuesSpy = GetIssuesSpy()
+        let sut = makeSut(loadingView: loadingViewSpy, getIssues: getIssuesSpy)
+        let exp = expectation(description: "waiting")
+        loadingViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel, LoadingViewModel(isLoading: true))
+            exp.fulfill()
+        }
+        
+        sut.show(viewModel: makeIssuesRequest())
+        wait(for: [exp], timeout: 1)
+        
+        let exp2 = expectation(description: "waiting")
+        loadingViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel, LoadingViewModel(isLoading: false))
+            exp2.fulfill()
+        }
+        getIssuesSpy.completeWithError(.unexpected)
+        wait(for: [exp2], timeout: 1)
+    }
 }
 
 extension IssuesPresenterTests {

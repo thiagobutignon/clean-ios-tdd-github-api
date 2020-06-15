@@ -34,6 +34,7 @@ public final class IssuesPresenter {
                     self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Conseguimos carregar as Issues da linguagem Swift no Github"))
                     self.issuesView.showIssues(viewModel: DisplayIssuesViewModel(data: issue))
             }
+            self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
         }
     }
     
