@@ -35,25 +35,26 @@ class GetIssuesIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 5)
     }
     
-//    func test_get_error() {
-//        let alamofireAdapter = AlamofireAdapter()
-//        let url: URL = URL(string: "api.github.com/repos/apple/swift/issues")!
-//        let sut = RemoteGetIssues(url: url, httpClient: alamofireAdapter)
-//        
-//        let exp = expectation(description: "waiting")
-//
-//        sut.get { result in
-//            switch result {
-//                case .failure(let error):
-//                XCTAssertNotNil(error)
-//                case .success:
-//                XCTFail("Expected failure got \(result)")
-//            }
-//            exp.fulfill()
-//
-//        }
-//        checkMemoryLeak(for: sut)
-//        wait(for: [exp], timeout: 5)
-//
-//    }
+    
+    func test_get_error() {
+        let alamofireAdapter = AlamofireAdapter()
+        let url: URL = URL(string: "api.github.com/repos/apple/swift/issues")!
+        let sut = RemoteGetIssues(url: url, httpClient: alamofireAdapter)
+        
+        let exp = expectation(description: "waiting")
+
+        sut.get { result in
+            switch result {
+                case .failure(let error):
+                XCTAssertNotNil(error)
+                case .success:
+                XCTFail("Expected failure got \(result)")
+            }
+            exp.fulfill()
+
+        }
+        checkMemoryLeak(for: sut)
+        wait(for: [exp], timeout: 5)
+
+    }
 }
