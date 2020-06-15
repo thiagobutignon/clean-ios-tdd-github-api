@@ -12,10 +12,12 @@ public struct Issue: Model {
     public let id: Int
     public let title: String
     public let state: String
+    public let number: Int
     
-    public init(id: Int, title: String, state: String) {
+    public init(id: Int, title: String, state: String, number: Int) {
         self.id = id
         self.title = title
         self.state = state
+        self.number = number
     }
 }

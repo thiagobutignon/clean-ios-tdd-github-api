@@ -21,15 +21,13 @@ class GetIssuesIntegrationTests: XCTestCase {
         let exp = expectation(description: "waiting")
         sut.get { result in
             
-            print(result)
             switch result {
                 case .failure:
-                    
                     XCTFail("Expected success got \(result) instead")
                 case .success(let issue):
                     XCTAssertNotNil(issue)
                     XCTAssertEqual(638425995, issue[0].id)
-                    XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
+                
             }
             exp.fulfill()
         }

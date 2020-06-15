@@ -9,10 +9,14 @@
 import Foundation
 import Domain
 
+func makeGetIssueModel() -> GetIssuesModel {
+    return GetIssuesModel(issues: makeIssueList())
+}
+
 func makeIssueList() -> [Issue] {
     return [makeIssue()]
 }
 
 func makeIssue() -> Issue {
-    return Issue(id: 0, title: "any_title", state: "any_state")
+    return Issue(id: 0, title: "any_title", state: "any_state", number: 0)
 }

@@ -24,6 +24,7 @@ public final class RemoteGetIssues: GetIssues {
             switch result {
                 case .success(let data):
                     if let model: [Issue] = data?.toModel() {
+                        print(model)
                         completion(.success(model))
                     } else {
                         completion(.failure(.unexpected))
