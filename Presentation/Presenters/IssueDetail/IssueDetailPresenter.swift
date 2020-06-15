@@ -32,7 +32,6 @@ public final class IssueDetailPresenter {
                 case .failure:
                     self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Você está sem conexão, tente novamente mais tarde"))
                 case .success(let issue):
-                    self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Conseguimos carregar as Issues da linguagem Swift no Github"))
                     self.issuesDetailView.showIssueDetail(viewModel: DisplayIssueDetailViewModel(data: issue))
             }
             self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
