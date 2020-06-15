@@ -9,13 +9,13 @@
 import Foundation
 
 public struct IssueDetail: Model {
-    public let id: Int
-    public let number: Int
-    public let url: String
-    public let title: String
-    public let body: String
-    public let createdAt: String
-    public let user: User
+    public var id: Int
+    public var number: Int
+    public var url: String
+    public var title: String
+    public var body: String
+    public var createdAt: String
+    public var user: User
     
     enum CodingKeys: String, CodingKey {
         case id

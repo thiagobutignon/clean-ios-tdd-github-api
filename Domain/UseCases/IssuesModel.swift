@@ -13,8 +13,8 @@ public protocol GetIssues {
     func get(completion: @escaping (Result) -> Void)
 }
 
-public struct GetIssuesModel: Model {
-    public let issues: [Issue]
+public struct IssuesModel: Model {
+    public var issues: [Issue]
     
     public init(issues: [Issue]) {
         self.issues = issues

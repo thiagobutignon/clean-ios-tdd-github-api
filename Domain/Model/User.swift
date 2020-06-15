@@ -9,8 +9,8 @@
 import Foundation
 
 public struct User: Model {
-    public let id: Int
-    public let avatarUrl: String
+    public var id: Int
+    public var avatarUrl: String
     
     enum CodingKeys: String, CodingKey {
         case id

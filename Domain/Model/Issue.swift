@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Issue: Model {
-    public let id: Int
-    public let title: String
-    public let state: String
-    public let number: Int
+    public var id: Int
+    public var title: String
+    public var state: String
+    public var number: Int
     
     public init(id: Int, title: String, state: String, number: Int) {
         self.id = id
