@@ -18,6 +18,8 @@ public final class IssuesViewController: UIViewController, Storyboarded {
     
     public var loadIssues: ((IssuesRequest) -> Void)?
     
+    public var detail: (() -> Void)?
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -66,13 +68,15 @@ extension IssuesViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "IssueDetailViewController", sender: self)
+    }
 }
 
 extension IssuesViewController: DisplayIssuesView {
     public func showIssues(viewModel: DisplayIssuesViewModel) {
         self.viewModel = viewModel
-        
-        
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }

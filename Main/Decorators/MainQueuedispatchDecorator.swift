@@ -34,3 +34,14 @@ extension MainQueueDispatchDecorator: GetIssues where T: GetIssues {
     }
 }
 
+extension MainQueueDispatchDecorator: GetIssueDetail where T: GetIssueDetail {
+    public func get(completion: @escaping (GetIssueDetail.Result) -> Void) {
+        instance.get { [weak self] result in
+            self?.dispatch {
+                completion(result)
+            }
+        }
+    } 
+}
+
+

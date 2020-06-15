@@ -31,10 +31,6 @@ class IssuesViewControllerTests: XCTestCase {
     func test_sut_implements_tableViewDataSource() {
         XCTAssertNotNil(makeSut() as UITableViewDataSource)
     }
-    
-    func test_sut_implements_tableViewDelegate() {
-        XCTAssertNotNil(makeSut() as UITableViewDelegate)
-    }
 }
 
 extension IssuesViewControllerTests {

@@ -28,7 +28,11 @@ public struct IssueDetailRequest: Model {
         self.user = user
     }
     
+    public func fromUserParamsTo(id: Int, avatarUrl: String) -> User {
+        return User(id: id, avatarUrl: avatarUrl)
+    }
+    
     public func toGetIssueDetailModel() -> GetIssueDetailModel {
-        return GetIssueDetailModel(issue: IssueDetail(id: id!, number: number!, url: url!, title: title!, body: body!, createdAt: createdAt!, user: user!))
+        return GetIssueDetailModel(issue: IssueDetail(id: id!, number: number!, url: url!, title: title!, body: body!, createdAt: createdAt!, user: fromUserParamsTo(id: user!.id, avatarUrl: user!.avatarUrl)))
     }
 }

@@ -34,3 +34,9 @@ extension WeakVarProxy: DisplayIssuesView where T: DisplayIssuesView {
         instance?.showIssues(viewModel: viewModel)
     }
 }
+
+extension WeakVarProxy: DisplayIssueDetailView where T: DisplayIssueDetailView {
+    func showIssueDetail(viewModel: DisplayIssueDetailViewModel) {
+        instance?.showIssueDetail(viewModel: viewModel)
+    }
+}

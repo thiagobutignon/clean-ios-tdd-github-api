@@ -98,9 +98,13 @@
 		83E9A3A02497435B003169B6 /* MainQueuedispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A39F2497435B003169B6 /* MainQueuedispatchDecorator.swift */; };
 		83E9A3A3249743E8003169B6 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3A2249743E8003169B6 /* WeakVarProxy.swift */; };
 		83E9A3A9249744A3003169B6 /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3A8249744A3003169B6 /* AlamofireAdapterFactory.swift */; };
-		83E9A3AB249744DE003169B6 /* RemoteGetIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3AA249744DE003169B6 /* RemoteGetIssues.swift */; };
+		83E9A3AB249744DE003169B6 /* RemoteGetIssuesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3AA249744DE003169B6 /* RemoteGetIssuesFactory.swift */; };
 		83E9A3AD24974551003169B6 /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3AC24974551003169B6 /* ApiUrlFactory.swift */; };
 		83E9A3AF24974601003169B6 /* IssuesControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3AE24974601003169B6 /* IssuesControllerFactory.swift */; };
+		83E9A3B224974AFB003169B6 /* IssuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3B124974AFB003169B6 /* IssuesRouter.swift */; };
+		83E9A3B524974C5A003169B6 /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3B424974C5A003169B6 /* IssueDetailViewController.swift */; };
+		83E9A3B72497537A003169B6 /* IssueDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A3B62497537A003169B6 /* IssueDetail.storyboard */; };
+		83E9A3B924975DBB003169B6 /* RemoteGetIssueDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A3B824975DBB003169B6 /* RemoteGetIssueDetailFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,9 +362,13 @@
 		83E9A39F2497435B003169B6 /* MainQueuedispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueuedispatchDecorator.swift; sourceTree = "<group>"; };
 		83E9A3A2249743E8003169B6 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		83E9A3A8249744A3003169B6 /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
-		83E9A3AA249744DE003169B6 /* RemoteGetIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssues.swift; sourceTree = "<group>"; };
+		83E9A3AA249744DE003169B6 /* RemoteGetIssuesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssuesFactory.swift; sourceTree = "<group>"; };
 		83E9A3AC24974551003169B6 /* ApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		83E9A3AE24974601003169B6 /* IssuesControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesControllerFactory.swift; sourceTree = "<group>"; };
+		83E9A3B124974AFB003169B6 /* IssuesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesRouter.swift; sourceTree = "<group>"; };
+		83E9A3B424974C5A003169B6 /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		83E9A3B62497537A003169B6 /* IssueDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetail.storyboard; sourceTree = "<group>"; };
+		83E9A3B824975DBB003169B6 /* RemoteGetIssueDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssueDetailFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -794,6 +802,7 @@
 		83E9A34124973715003169B6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83E9A3B324974C38003169B6 /* IssueDetail */,
 				83E9A34324973750003169B6 /* Issues */,
 			);
 			path = Scenes;
@@ -803,6 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				83E9A350249738C9003169B6 /* IssuesViewController.swift */,
+				83E9A3B124974AFB003169B6 /* IssuesRouter.swift */,
 				83E9A35724973D06003169B6 /* Issues.storyboard */,
 			);
 			path = Issues;
@@ -913,7 +923,8 @@
 		83E9A3A62497448A003169B6 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				83E9A3AA249744DE003169B6 /* RemoteGetIssues.swift */,
+				83E9A3AA249744DE003169B6 /* RemoteGetIssuesFactory.swift */,
+				83E9A3B824975DBB003169B6 /* RemoteGetIssueDetailFactory.swift */,
 				83E9A3AC24974551003169B6 /* ApiUrlFactory.swift */,
 			);
 			path = Http;
@@ -925,6 +936,15 @@
 				83E9A3AE24974601003169B6 /* IssuesControllerFactory.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		83E9A3B324974C38003169B6 /* IssueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				83E9A3B424974C5A003169B6 /* IssueDetailViewController.swift */,
+				83E9A3B62497537A003169B6 /* IssueDetail.storyboard */,
+			);
+			path = IssueDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1348,6 +1368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83E9A35824973D06003169B6 /* Issues.storyboard in Resources */,
+				83E9A3B72497537A003169B6 /* IssueDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1486,6 +1507,8 @@
 			files = (
 				83E9A351249738C9003169B6 /* IssuesViewController.swift in Sources */,
 				83E9A34B249737B5003169B6 /* UIColorExtensions.swift in Sources */,
+				83E9A3B524974C5A003169B6 /* IssueDetailViewController.swift in Sources */,
+				83E9A3B224974AFB003169B6 /* IssuesRouter.swift in Sources */,
 				83E9A3492497379D003169B6 /* UIViewControllerExtensions.swift in Sources */,
 				83E9A3462497377B003169B6 /* NavigationController.swift in Sources */,
 				83E9A34F249737DB003169B6 /* Color.swift in Sources */,
@@ -1511,11 +1534,12 @@
 			files = (
 				83E9A3AF24974601003169B6 /* IssuesControllerFactory.swift in Sources */,
 				83E9A3A3249743E8003169B6 /* WeakVarProxy.swift in Sources */,
+				83E9A3B924975DBB003169B6 /* RemoteGetIssueDetailFactory.swift in Sources */,
 				83E9A3A02497435B003169B6 /* MainQueuedispatchDecorator.swift in Sources */,
 				83E9A3AD24974551003169B6 /* ApiUrlFactory.swift in Sources */,
 				83E9A36A249741DC003169B6 /* AppDelegate.swift in Sources */,
 				83E9A3A9249744A3003169B6 /* AlamofireAdapterFactory.swift in Sources */,
-				83E9A3AB249744DE003169B6 /* RemoteGetIssues.swift in Sources */,
+				83E9A3AB249744DE003169B6 /* RemoteGetIssuesFactory.swift in Sources */,
 				83E9A36C249741DC003169B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
