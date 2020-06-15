@@ -30,7 +30,6 @@ public final class RemoteGetIssueDetail: GetIssueDetail {
                     } else {
                         completion(.failure(.unexpected))
                 }
-                
                 case .failure:
                     print("---- deu erro 458x")
                     completion(.failure(.unexpected))
