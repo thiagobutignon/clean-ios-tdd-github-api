@@ -20,7 +20,7 @@ class RemoteGetIssuesTests: XCTestCase {
     
     func test_get_should_call_httpClient_and_get_data() {
         let (sut, _) = makeSut()
-        let getIssuesModel = makeGetIssueModel()
+        let getIssuesModel = makeIssueModel()
         sut.get { _ in }
         XCTAssertNotNil(getIssuesModel)
     }
