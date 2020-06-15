@@ -27,7 +27,7 @@
 		8350A03024971748002D56C8 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A02F24971748002D56C8 /* TestFactories.swift */; };
 		8350A0332497181F002D56C8 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A0322497181F002D56C8 /* AlertViewSpy.swift */; };
 		8350A03524971826002D56C8 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A03424971826002D56C8 /* LoadingViewSpy.swift */; };
-		8350A03724971842002D56C8 /* DisplayIssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A03624971842002D56C8 /* DisplayIssuesView.swift */; };
+		8350A03724971842002D56C8 /* DisplayIssuesViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A03624971842002D56C8 /* DisplayIssuesViewSpy.swift */; };
 		8350A03A24971A43002D56C8 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E82493FF8000976FF1 /* TestExtension.swift */; };
 		8350A03B24971C88002D56C8 /* IssueModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1EC249400CC00976FF1 /* IssueModelFactory.swift */; };
 		8350A03D249724CF002D56C8 /* IssueDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350A03C249724CF002D56C8 /* IssueDetailPresenter.swift */; };
@@ -61,6 +61,7 @@
 		8397B2262494653900976FF1 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1BB2493FAD500976FF1 /* Data.framework */; };
 		8397B2272494653900976FF1 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8397B1BB2493FAD500976FF1 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8397B22D249471F500976FF1 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1E82493FF8000976FF1 /* TestExtension.swift */; };
+		83E9A31F24972997003169B6 /* DisplayIssuesDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A31E24972997003169B6 /* DisplayIssuesDetailViewSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,7 +174,7 @@
 		8350A02F24971748002D56C8 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
 		8350A0322497181F002D56C8 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		8350A03424971826002D56C8 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
-		8350A03624971842002D56C8 /* DisplayIssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayIssuesView.swift; sourceTree = "<group>"; };
+		8350A03624971842002D56C8 /* DisplayIssuesViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayIssuesViewSpy.swift; sourceTree = "<group>"; };
 		8350A03C249724CF002D56C8 /* IssueDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailPresenter.swift; sourceTree = "<group>"; };
 		8350A03E24972508002D56C8 /* DisplayIssuesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayIssuesDetailView.swift; sourceTree = "<group>"; };
 		8350A04024972517002D56C8 /* IssueDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailRequest.swift; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 		8397B21924944B4E00976FF1 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8397B21B24944B4E00976FF1 /* GetIssuesIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIssuesIntegrationTests.swift; sourceTree = "<group>"; };
 		8397B21D24944B4E00976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83E9A31E24972997003169B6 /* DisplayIssuesDetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayIssuesDetailViewSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,7 +359,8 @@
 			children = (
 				8350A0322497181F002D56C8 /* AlertViewSpy.swift */,
 				8350A03424971826002D56C8 /* LoadingViewSpy.swift */,
-				8350A03624971842002D56C8 /* DisplayIssuesView.swift */,
+				8350A03624971842002D56C8 /* DisplayIssuesViewSpy.swift */,
+				83E9A31E24972997003169B6 /* DisplayIssuesDetailViewSpy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -907,7 +910,8 @@
 				8350A03A24971A43002D56C8 /* TestExtension.swift in Sources */,
 				8350A03024971748002D56C8 /* TestFactories.swift in Sources */,
 				8350A03B24971C88002D56C8 /* IssueModelFactory.swift in Sources */,
-				8350A03724971842002D56C8 /* DisplayIssuesView.swift in Sources */,
+				8350A03724971842002D56C8 /* DisplayIssuesViewSpy.swift in Sources */,
+				83E9A31F24972997003169B6 /* DisplayIssuesDetailViewSpy.swift in Sources */,
 				8350A00C249709CA002D56C8 /* IssuesPresenterTests.swift in Sources */,
 				8350A02D24971670002D56C8 /* GetIssuesSpy.swift in Sources */,
 			);
