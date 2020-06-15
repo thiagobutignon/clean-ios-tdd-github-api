@@ -25,21 +25,6 @@ class IssueDetailPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-    func test_get_issue_detail_should_show_success_message_if_show_succeds() {
-        let alertViewSpy = AlertViewSpy()
-        let getIssueDetailSpy = GetIssueDetailSpy()
-        let sut = makeSut(alertView: alertViewSpy, getIssueDetail: getIssueDetailSpy)
-        let exp = expectation(description: "waiting")
-        alertViewSpy.observe { viewModel in
-            XCTAssertEqual(viewModel, makeSuccessAlertViewModel(message: "Conseguimos carregar as Issues da linguagem Swift no Github"))
-            exp.fulfill()
-        }
-        sut.show(viewModel: makeIssueDetailRequest())
-
-        getIssueDetailSpy.completeWithIssueDetail(makeIssueDetail())
-        wait(for: [exp], timeout: 1)
-    }
-    
     func test_get_issue_detail_should_calls_displayIssuesView_on_success() {
         let displayIssueDetailViewSpy = DisplayIssueDetailViewSpy()
         let getIssueDetailSpy = GetIssueDetailSpy()

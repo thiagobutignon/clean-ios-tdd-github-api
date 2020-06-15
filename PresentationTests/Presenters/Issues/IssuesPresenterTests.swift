@@ -24,20 +24,6 @@ class IssuesPresenterTests: XCTestCase {
         getIssuesSpy.completeWithError(.unexpected)
         wait(for: [exp], timeout: 1)
     }
-    
-    func test_get_issues_should_show_success_message_if_show_succeds() {
-        let alertViewSpy = AlertViewSpy()
-        let getIssuesSpy = GetIssuesSpy()
-        let sut = makeSut(alertView: alertViewSpy, getIssues: getIssuesSpy)
-        let exp = expectation(description: "waiting")
-        alertViewSpy.observe { viewModel in
-            XCTAssertEqual(viewModel, makeSuccessAlertViewModel(message: "Conseguimos carregar as Issues da linguagem Swift no Github"))
-            exp.fulfill()
-        }
-        sut.show(viewModel: makeIssuesRequest())
-        getIssuesSpy.completeWithIssue(makeIssueModel().issues)
-        wait(for: [exp], timeout: 1)
-    }
 
     
     func test_get_issues_should_calls_displayIssuesView_on_success() {
