@@ -1,0 +1,49 @@
+//
+//  IssuesPresenterTests.swift
+//  PresentationTests
+//
+//  Created by Thiago B Claramunt on 14/06/20.
+//  Copyright © 2020 Thiago B Claramunt. All rights reserved.
+//
+
+import XCTest
+import Presentation
+import Domain
+
+class IssuesPresenterTests: XCTestCase {
+    func test_get_issues_should_show_error_message_if_show_fails() {
+        let alertViewSpy = AlertViewSpy()
+        let getIssuesSpy = GetIssuesSpy()
+        let sut = makeSut(alertView: alertViewSpy, getIssues: getIssuesSpy)
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel, makeErrorAlertViewModel(message: "Você está sem conexão, tente novamente mais tarde"))
+            exp.fulfill()
+        }
+        sut.show(viewModel: makeIssuesRequest())
+        getIssuesSpy.completeWithError(.unexpected)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_get_issues_should_show_success_message_if_show_succeds() {
+        let alertViewSpy = AlertViewSpy()
+        let getIssuesSpy = GetIssuesSpy()
+        let sut = makeSut(alertView: alertViewSpy, getIssues: getIssuesSpy)
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel, makeSuccessAlertViewModel(message: "Conseguimos carregar as Issues da linguagem Swift no Github"))
+            exp.fulfill()
+        }
+        sut.show(viewModel: makeIssuesRequest())
+        getIssuesSpy.completeWithIssue(makeIssueModel().issues)
+        wait(for: [exp], timeout: 1)
+    }
+}
+
+extension IssuesPresenterTests {
+    func makeSut(issuesView: DisplayIssuesView = DisplayIssuesViewSpy(), alertView: AlertViewSpy = AlertViewSpy(), loadingView: LoadingView = LoadingViewSpy(), getIssues: GetIssuesSpy = GetIssuesSpy(), file: StaticString = #file, line: UInt = #line) -> IssuesPresenter {
+        let sut = IssuesPresenter(issuesView: issuesView, alertView: alertView, loadingView: loadingView, getIssues: getIssues)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        return sut
+    }
+}

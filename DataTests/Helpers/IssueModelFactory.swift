@@ -9,8 +9,8 @@
 import Foundation
 import Domain
 
-func makeGetIssueModel() -> GetIssuesModel {
-    return GetIssuesModel(issues: makeIssueList())
+func makeIssueModel() -> IssuesModel {
+    return IssuesModel(issues: makeIssueList())
 }
 
 func makeIssueList() -> [Issue] {
