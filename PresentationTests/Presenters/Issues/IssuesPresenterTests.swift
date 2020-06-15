@@ -38,6 +38,7 @@ class IssuesPresenterTests: XCTestCase {
         getIssuesSpy.completeWithIssue(makeIssueModel().issues)
         wait(for: [exp], timeout: 1)
     }
+
     
     func test_get_issues_should_calls_displayIssuesView_on_success() {
         let displayIssuesViewSpy = DisplayIssuesViewSpy()

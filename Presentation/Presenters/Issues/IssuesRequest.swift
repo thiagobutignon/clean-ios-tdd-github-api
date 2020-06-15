@@ -14,6 +14,10 @@ public struct IssuesRequest: Model {
     public var title: String?
     public var state: String?
     public var number: Int?
+    public var url: String?
+    public var body: String?
+    public var user: User?
+    public var createdAt: String?
     
     public init(id: Int?, title: String?, state: String?, number: Int?) {
         self.id = id

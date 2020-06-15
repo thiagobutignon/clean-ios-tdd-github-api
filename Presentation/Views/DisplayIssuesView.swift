@@ -11,6 +11,7 @@ import Domain
 
 public protocol DisplayIssuesView {
     func showIssues(viewModel: DisplayIssuesViewModel)
+    func route(viewModel: Issue)
 }
 
 public struct DisplayIssuesViewModel: Equatable {

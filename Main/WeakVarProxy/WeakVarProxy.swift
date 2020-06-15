@@ -8,6 +8,7 @@
 
 import Foundation
 import Presentation
+import Domain
 
 class WeakVarProxy<T: AnyObject> {
     private weak var instance: T?
@@ -30,6 +31,10 @@ extension WeakVarProxy: LoadingView where T: LoadingView {
 }
 
 extension WeakVarProxy: DisplayIssuesView where T: DisplayIssuesView {
+    func route(viewModel: Issue) {
+        instance?.route(viewModel: viewModel)
+    }
+    
     func showIssues(viewModel: DisplayIssuesViewModel) {
         instance?.showIssues(viewModel: viewModel)
     }

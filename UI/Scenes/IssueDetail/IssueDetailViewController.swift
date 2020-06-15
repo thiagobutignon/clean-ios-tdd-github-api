@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Presentation
 import Domain
+import SDWebImage
 
 public final class IssueDetailViewController: UIViewController, Storyboarded {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -17,8 +18,8 @@ public final class IssueDetailViewController: UIViewController, Storyboarded {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var createAtLabel: UILabel!
     @IBOutlet weak var linkButton: UIButton!
-    public var url: String = ""
-    
+    @IBOutlet weak var avatarImage: UIImageView!
+
     var viewModel: DisplayIssueDetailViewModel?
     
     public var loadIssueDetail: ((IssueDetailRequest) -> Void)?
@@ -26,20 +27,21 @@ public final class IssueDetailViewController: UIViewController, Storyboarded {
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        print(url)
     }
     
     func configure() {
         title = "Details"
         
         let viewModel = IssueDetailRequest(id: 0, number: 0, url: "url", title: "title", body: "body", createdAt: "createdAt", user: User(id: 0, avatarUrl: ""))
+        titleLabel.text = "Teste"
         linkButton?.layer.cornerRadius = 5
+        linkButton?.backgroundColor = Color.primary
         linkButton?.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
         loadIssueDetail?(viewModel)
     }
     
     @objc private func linkButtonTapped() {
-        if let url = NSURL(string: linkButton.value(forKey: "url") as! String) {
+        if let url = NSURL(string: "https://github.com/apple/swift/pull/\(viewModel!.data.number)") {
             UIApplication.shared.openURL(url as URL)
         }
     }
@@ -71,7 +73,7 @@ extension IssueDetailViewController: DisplayIssueDetailView {
         self.titleLabel.text = viewModel.data.title
         self.bodyLabel.text = viewModel.data.body
         self.createAtLabel.text = viewModel.data.createdAt
-        self.linkButton.setValue(viewModel.data.url, forKey: "url")
-        
+        let imageUrl = viewModel.data.user.avatarUrl + "." + ".jpg"
+        self.avatarImage.sd_setImage(with: URL(string: imageUrl))
     }
 }

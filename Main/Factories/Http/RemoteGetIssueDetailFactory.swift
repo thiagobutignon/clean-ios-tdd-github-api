@@ -10,8 +10,8 @@ import Foundation
 import Data
 import Domain
 
-func makeRemoteGetIssueDetailFactory() -> GetIssueDetail {
-    return makeRemoteGetIssueDetailWith(httpClient: makeAlamofireAdapter(), issueNumber: 0)
+func makeRemoteGetIssueDetailFactory(issueNumber: Int) -> GetIssueDetail {
+    return makeRemoteGetIssueDetailWith(httpClient: makeAlamofireAdapter(), issueNumber: issueNumber)
 }
 
 func makeRemoteGetIssueDetailWith(httpClient: HttpGetClient, issueNumber: Int) -> GetIssueDetail {

@@ -11,22 +11,12 @@ import UI
 import Presentation
 import Domain
 
-public func makeIssueDetailFactory() -> IssueDetailViewController {
-    return makeIssueDetailFactoryWith(getIssueDetail: makeRemoteGetIssueDetailFactory())
-}
-
-public func makeIssueDetailFactoryWith(getIssueDetail: GetIssueDetail) -> IssueDetailViewController {
-    let controller = IssueDetailViewController.instantiate()
-    let presenter = IssueDetailPresenter(issuesDetailView: WeakVarProxy(controller), alertView: WeakVarProxy(controller), loadingView: WeakVarProxy(controller), getIssueDetail: getIssueDetail)
-    controller.loadIssueDetail = presenter.show
-    return controller
-}
-
 public func makeIssuesRouter(nav: NavigationController) -> IssuesViewController {
     let controller = IssuesViewController.instantiate()
     let presenter = IssuesPresenter(issuesView: WeakVarProxy(controller), alertView: WeakVarProxy(controller), loadingView: WeakVarProxy(controller), getIssues: makeRemoteGetIssues())
-    let router = IssuesRouter(nav: nav, detailFactory: makeIssueDetailFactory)
+    let router = IssuesRouter(nav: nav, detailFactory: {makeIssueDetailFactory(issueNumber: controller.issue!.number)})
     controller.loadIssues = presenter.show
+    
     controller.detail = router.goToDetail
     return controller
 }

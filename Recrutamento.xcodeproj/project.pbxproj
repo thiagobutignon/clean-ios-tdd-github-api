@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		832AF4412496FDBE00A9DA2A /* IssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AF4402496FDBE00A9DA2A /* IssueDetail.swift */; };
+		8331B3782497F6B000CFF0CA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8331B3772497F6B000CFF0CA /* SDWebImage */; };
+		8331B37A2497F6B000CFF0CA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8331B3792497F6B000CFF0CA /* SDWebImageMapKit */; };
+		83428AC82497CC2F00F6FF70 /* IssueDetailControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83428AC72497CC2F00F6FF70 /* IssueDetailControllerFactory.swift */; };
 		83509FEE249701BD002D56C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FED249701BD002D56C8 /* User.swift */; };
 		83509FF0249701F7002D56C8 /* GetIssueDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FEF249701F7002D56C8 /* GetIssueDetailModel.swift */; };
 		83509FF2249702AA002D56C8 /* RemoteGetIssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FF1249702AA002D56C8 /* RemoteGetIssueDetail.swift */; };
@@ -279,6 +282,7 @@
 
 /* Begin PBXFileReference section */
 		832AF4402496FDBE00A9DA2A /* IssueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetail.swift; sourceTree = "<group>"; };
+		83428AC72497CC2F00F6FF70 /* IssueDetailControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailControllerFactory.swift; sourceTree = "<group>"; };
 		83509FED249701BD002D56C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83509FEF249701F7002D56C8 /* GetIssueDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIssueDetailModel.swift; sourceTree = "<group>"; };
 		83509FF1249702AA002D56C8 /* RemoteGetIssueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssueDetail.swift; sourceTree = "<group>"; };
@@ -440,6 +444,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8331B3782497F6B000CFF0CA /* SDWebImage in Frameworks */,
+				8331B37A2497F6B000CFF0CA /* SDWebImageMapKit in Frameworks */,
 				83E9A352249738E4003169B6 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -934,6 +940,7 @@
 			isa = PBXGroup;
 			children = (
 				83E9A3AE24974601003169B6 /* IssuesControllerFactory.swift */,
+				83428AC72497CC2F00F6FF70 /* IssueDetailControllerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1157,6 +1164,10 @@
 				83E9A355249738E4003169B6 /* PBXTargetDependency */,
 			);
 			name = UI;
+			packageProductDependencies = (
+				8331B3772497F6B000CFF0CA /* SDWebImage */,
+				8331B3792497F6B000CFF0CA /* SDWebImageMapKit */,
+			);
 			productName = UI;
 			productReference = 83E9A32A249736D8003169B6 /* UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1285,6 +1296,7 @@
 			mainGroup = 83E9922E2493E33700127B14;
 			packageReferences = (
 				8397B20A2494459100976FF1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8331B3762497F6B000CFF0CA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 83E992392493E33800127B14 /* Products */;
 			projectDirPath = "";
@@ -1537,6 +1549,7 @@
 				83E9A3B924975DBB003169B6 /* RemoteGetIssueDetailFactory.swift in Sources */,
 				83E9A3A02497435B003169B6 /* MainQueuedispatchDecorator.swift in Sources */,
 				83E9A3AD24974551003169B6 /* ApiUrlFactory.swift in Sources */,
+				83428AC82497CC2F00F6FF70 /* IssueDetailControllerFactory.swift in Sources */,
 				83E9A36A249741DC003169B6 /* AppDelegate.swift in Sources */,
 				83E9A3A9249744A3003169B6 /* AlamofireAdapterFactory.swift in Sources */,
 				83E9A3AB249744DE003169B6 /* RemoteGetIssuesFactory.swift in Sources */,
@@ -2443,6 +2456,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8331B3762497F6B000CFF0CA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		8397B20A2494459100976FF1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -2454,6 +2475,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8331B3772497F6B000CFF0CA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8331B3762497F6B000CFF0CA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		8331B3792497F6B000CFF0CA /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8331B3762497F6B000CFF0CA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		8397B20B2494459100976FF1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8397B20A2494459100976FF1 /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -8,9 +8,11 @@
 
 import Foundation
 import Presentation
+import Domain
 
 class DisplayIssuesViewSpy: DisplayIssuesView {
     var emit: ((DisplayIssuesViewModel) -> Void)?
+    var route: ((Issue) -> Void)?
     
     func observe(completion: @escaping (DisplayIssuesViewModel) -> Void) {
         self.emit = completion
@@ -18,5 +20,9 @@ class DisplayIssuesViewSpy: DisplayIssuesView {
     
     func showIssues(viewModel: DisplayIssuesViewModel) {
         self.emit?(viewModel)
+    }
+    
+    func route(viewModel: Issue) {
+        self.route?(viewModel)
     }
 }

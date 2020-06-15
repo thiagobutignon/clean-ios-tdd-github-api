@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import UIKit
+import Domain
 
 public final class IssuesRouter {
     private let nav: NavigationController
     private let detailFactory: () -> IssueDetailViewController
+
     
     public init(nav: NavigationController, detailFactory: @escaping () -> IssueDetailViewController) {
         self.nav = nav

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Presentation
+import Domain
 
 public final class IssuesViewController: UIViewController, Storyboarded {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -19,6 +20,7 @@ public final class IssuesViewController: UIViewController, Storyboarded {
     public var loadIssues: ((IssuesRequest) -> Void)?
     
     public var detail: (() -> Void)?
+    public var issue: Issue?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,11 +72,18 @@ extension IssuesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "IssueDetailViewController", sender: self)
+        let selectedRow = viewModel?.currentIssue(indexPath: indexPath.row)
+        
+        route(viewModel: selectedRow!)
     }
 }
 
 extension IssuesViewController: DisplayIssuesView {
+    public func route(viewModel: Issue) {
+        issue = viewModel
+        detail?()
+    }
+    
     public func showIssues(viewModel: DisplayIssuesViewModel) {
         self.viewModel = viewModel
         self.tableView.reloadData()
