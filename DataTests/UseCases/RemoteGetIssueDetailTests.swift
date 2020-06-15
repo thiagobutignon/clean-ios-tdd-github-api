@@ -20,9 +20,9 @@ class RemoteGetIssueDetailTests: XCTestCase {
     
     func test_get_should_call_httpClient_and_get_data() {
         let (sut, _) = makeSut()
-        let getIssuesDetailModel = makeIssueDetailModel()
+        let getIssuesDetail = makeIssueDetail()
         sut.get { _ in }
-        XCTAssertNotNil(getIssuesDetailModel)
+        XCTAssertNotNil(getIssuesDetail)
     }
     
     func test_get_should_complete_with_error_if_client_completes_with_error() {
@@ -34,9 +34,9 @@ class RemoteGetIssueDetailTests: XCTestCase {
     
     func test_get_should_complete_with_issues_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
-        let issue = makeIssueDetailModel()
-        expect(sut, completeWith: .success(issue), when: {
-            httpClientSpy.completeWithSuccess(issue.toData()!)
+        let issueDetail = makeIssueDetail()
+        expect(sut, completeWith: .success(issueDetail), when: {
+            httpClientSpy.completeWithSuccess(issueDetail.toData()!)
         })
         
     }

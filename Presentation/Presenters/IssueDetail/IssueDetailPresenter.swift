@@ -9,7 +9,7 @@
 import Foundation
 import Domain
 
-public final class IssuesDetailPresenter {
+public final class IssueDetailPresenter {
     private var issuesDetailView: DisplayIssueDetailView
     private let alertView: AlertView
     private let loadingView: LoadingView

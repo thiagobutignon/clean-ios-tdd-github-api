@@ -9,7 +9,7 @@
 import Foundation
 import Presentation
 
-class DisplayIssuesDetailViewSpy: DisplayIssueDetailView {
+class DisplayIssueDetailViewSpy: DisplayIssueDetailView {
     var emit: ((DisplayIssueDetailViewModel) -> Void)?
     
     func observe(completion: @escaping (DisplayIssueDetailViewModel) -> Void) {
