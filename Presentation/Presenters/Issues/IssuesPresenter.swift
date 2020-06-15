@@ -37,6 +37,4 @@ public final class IssuesPresenter {
             self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
         }
     }
-    
-    
 }

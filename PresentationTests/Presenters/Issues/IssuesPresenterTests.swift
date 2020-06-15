@@ -39,6 +39,27 @@ class IssuesPresenterTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
+    func test_get_issues_should_calls_displayIssuesView_on_success() {
+        let displayIssuesViewSpy = DisplayIssuesViewSpy()
+        let getIssuesSpy = GetIssuesSpy()
+        let sut = makeSut(issuesView: displayIssuesViewSpy, getIssues: getIssuesSpy)
+        let exp = expectation(description: "waiting")
+        
+        getIssuesSpy.get { viewModel in
+            switch viewModel {
+                case .failure:
+                    XCTFail("Expected success got: \(viewModel) instead")
+                case .success(let issue):
+                    XCTAssertEqual(issue, makeIssueModel().issues)
+            }
+            exp.fulfill()
+        }
+        getIssuesSpy.completeWithIssue(makeIssueModel().issues)
+        sut.show(viewModel: makeIssuesRequest())
+        
+        wait(for: [exp], timeout: 1)
+    }
+    
     func test_get_issues_should_show_loading_before_and_after_show() {
         let loadingViewSpy = LoadingViewSpy()
         let getIssuesSpy = GetIssuesSpy()
