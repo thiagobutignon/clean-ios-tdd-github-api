@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832AF4412496FDBE00A9DA2A /* IssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AF4402496FDBE00A9DA2A /* IssueDetail.swift */; };
+		83509FEE249701BD002D56C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FED249701BD002D56C8 /* User.swift */; };
 		83755C282496F4BF00DA08F2 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83755C272496F4BF00DA08F2 /* Issue.swift */; };
 		8397B1A22493E7F400976FF1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1A12493E7F400976FF1 /* Model.swift */; };
 		8397B1B02493F7C500976FF1 /* IssuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1AF2493F7C500976FF1 /* IssuesModel.swift */; };
@@ -101,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		832AF4402496FDBE00A9DA2A /* IssueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetail.swift; sourceTree = "<group>"; };
+		83509FED249701BD002D56C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83755C272496F4BF00DA08F2 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		8397B1872493E5B800976FF1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8397B18A2493E5B800976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				8397B1A12493E7F400976FF1 /* Model.swift */,
+				832AF4402496FDBE00A9DA2A /* IssueDetail.swift */,
+				83509FED249701BD002D56C8 /* User.swift */,
 				83755C272496F4BF00DA08F2 /* Issue.swift */,
 			);
 			path = Model;
@@ -616,8 +622,10 @@
 			files = (
 				8397B1B52493F9E300976FF1 /* DomainErrors.swift in Sources */,
 				8397B1B02493F7C500976FF1 /* IssuesModel.swift in Sources */,
+				83509FEE249701BD002D56C8 /* User.swift in Sources */,
 				8397B1A22493E7F400976FF1 /* Model.swift in Sources */,
 				83755C282496F4BF00DA08F2 /* Issue.swift in Sources */,
+				832AF4412496FDBE00A9DA2A /* IssueDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
