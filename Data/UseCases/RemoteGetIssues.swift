@@ -23,15 +23,16 @@ public final class RemoteGetIssues: GetIssues {
             guard self != nil else { return }
             switch result {
                 case .success(let data):
-                    if let model: IssuesModelResult = data?.toModel() {
+                    if let model: [Issue] = data?.toModel() {
                         completion(.success(model))
                     } else {
                         completion(.failure(.unexpected))
                 }
+
                 case .failure:
+                    print("---- deu erro 458x")
                     completion(.failure(.unexpected))
             }
         }
     }
-
 }

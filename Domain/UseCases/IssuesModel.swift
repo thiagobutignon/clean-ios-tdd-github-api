@@ -9,14 +9,18 @@
 import Foundation
 
 public protocol GetIssues {
-    typealias Result = Swift.Result<IssuesModelResult, DomainError>
+    typealias Result = Swift.Result<[Issue], DomainError>
     func get(completion: @escaping (Result) -> Void)
 }
 
 public struct GetIssuesModel: Model {
-    public var issues: IssuesModelResult
+    public var issues: [Issue]
     
-    public init(issues: IssuesModelResult) {
+    public init(issues: [Issue]) {
         self.issues = issues
     }
 }
+
+
+
+

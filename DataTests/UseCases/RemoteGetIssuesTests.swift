@@ -20,7 +20,7 @@ class RemoteGetIssuesTests: XCTestCase {
     
     func test_get_should_call_httpClient_and_get_data() {
         let (sut, _) = makeSut()
-        let getIssuesModel = makeGetIssueModelResult()
+        let getIssuesModel = makeIssueList()
         sut.get { _ in }
         XCTAssertNotNil(getIssuesModel)
     }
@@ -34,11 +34,13 @@ class RemoteGetIssuesTests: XCTestCase {
     
     func test_get_should_complete_with_issues_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
-        let issues = makeIssuesModelResult()
-        expect(sut, completeWith: .success(issues), when:  {
-            httpClientSpy.completeWithSuccess(issues.toData()!)
+        let issue = makeIssue()
+        expect(sut, completeWith: .success([makeIssue()]), when: {
+            httpClientSpy.completeWithSuccess(issue.toData()!)
         })
+        
     }
+    
     
     func test_get_should_complete_with_error_if_cliente_completes_with_invalid_data() {
         let (sut, httpClientSpy) = makeSut()
@@ -47,10 +49,11 @@ class RemoteGetIssuesTests: XCTestCase {
         })
     }
     
+  
     func test_get_should_not_complete_if_sut_has_been_deallocated() {
         let httpClientSpy = HttpClientSpy()
         var sut: RemoteGetIssues? = RemoteGetIssues(url: makeUrl(), httpClient: httpClientSpy)
-        var result: Result<IssuesModelResult, DomainError>?
+        var result: (Result<[Issue], DomainError>)?
         sut?.get(completion: { result = $0 })
         sut = nil
         httpClientSpy.completeWithError(.noConnectivity)
