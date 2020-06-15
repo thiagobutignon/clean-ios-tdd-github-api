@@ -10,6 +10,7 @@
 		832AF4412496FDBE00A9DA2A /* IssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AF4402496FDBE00A9DA2A /* IssueDetail.swift */; };
 		83509FEE249701BD002D56C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FED249701BD002D56C8 /* User.swift */; };
 		83509FF0249701F7002D56C8 /* IssueDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FEF249701F7002D56C8 /* IssueDetailModel.swift */; };
+		83509FF2249702AA002D56C8 /* RemoteGetIssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83509FF1249702AA002D56C8 /* RemoteGetIssueDetail.swift */; };
 		83755C282496F4BF00DA08F2 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83755C272496F4BF00DA08F2 /* Issue.swift */; };
 		8397B1A22493E7F400976FF1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1A12493E7F400976FF1 /* Model.swift */; };
 		8397B1B02493F7C500976FF1 /* IssuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397B1AF2493F7C500976FF1 /* IssuesModel.swift */; };
@@ -107,6 +108,7 @@
 		832AF4402496FDBE00A9DA2A /* IssueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetail.swift; sourceTree = "<group>"; };
 		83509FED249701BD002D56C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83509FEF249701F7002D56C8 /* IssueDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailModel.swift; sourceTree = "<group>"; };
+		83509FF1249702AA002D56C8 /* RemoteGetIssueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetIssueDetail.swift; sourceTree = "<group>"; };
 		83755C272496F4BF00DA08F2 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		8397B1872493E5B800976FF1 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8397B18A2493E5B800976FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				8397B1DB2493FC5600976FF1 /* RemoteGetIssues.swift */,
+				83509FF1249702AA002D56C8 /* RemoteGetIssueDetail.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8397B1DC2493FC5600976FF1 /* RemoteGetIssues.swift in Sources */,
+				83509FF2249702AA002D56C8 /* RemoteGetIssueDetail.swift in Sources */,
 				8397B1D82493FC0E00976FF1 /* HttpError.swift in Sources */,
 				8397B1DA2493FC3500976FF1 /* ExtensionHelpers.swift in Sources */,
 				8397B1D62493FB9E00976FF1 /* HttpGetClient.swift in Sources */,
