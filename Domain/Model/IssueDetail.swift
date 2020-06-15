@@ -37,9 +37,6 @@ public struct IssueDetail: Model {
         self.createdAt = createdAt
         self.user = user
     }
-    
-    
-    
 }
 
 

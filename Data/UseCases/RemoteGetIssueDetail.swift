@@ -24,7 +24,7 @@ public final class RemoteGetIssueDetail: GetIssueDetail {
             guard self != nil else { return }
             switch result {
                 case .success(let data):
-                    if let model: Issue = data?.toModel() {
+                    if let model: IssueDetail = data?.toModel() {
                         print(model)
                         completion(.success(model))
                     } else {

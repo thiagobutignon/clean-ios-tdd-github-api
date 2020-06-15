@@ -9,7 +9,7 @@
 import Foundation
 import Domain
 
-func makeIssueDetailModelFactory() -> IssueDetail {
+func makeIssueDetailModel() -> IssueDetail {
     return IssueDetail(id: 0, number: 0, url: "any_url", title: "any_title", body: "any_body", createdAt: "any_createdAt", user: makeUser())
 }
 
