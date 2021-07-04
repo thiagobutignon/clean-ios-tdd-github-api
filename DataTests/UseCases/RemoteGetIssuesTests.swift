@@ -32,16 +32,16 @@ class RemoteGetIssuesTests: XCTestCase {
         })
     }
     
-//    func test_get_should_complete_with_issues_if_client_completes_with_valid_data() {
-//        let (sut, httpClientSpy) = makeSut()
-//        let issue = makeIssueList()
-//        
-//        
-////        expect(sut, completeWith: .success(issue), when: {
-////            httpClientSpy.completeWithSuccess(issue)
-////        })
-//        
-//    }
+    func test_get_should_complete_with_issues_if_client_completes_with_valid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let issue = makeIssueList()
+        
+        
+        expect(sut, completeWith: .success(issue), when: {
+            httpClientSpy.completeWithSuccess(issue.toData())
+        })
+        
+    }
     
     
     func test_get_should_complete_with_error_if_cliente_completes_with_invalid_data() {

@@ -73,7 +73,7 @@ extension IssuesViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRow = viewModel?.currentIssue(indexPath: indexPath.row)
-        
+            
         route(viewModel: selectedRow!)
     }
 }

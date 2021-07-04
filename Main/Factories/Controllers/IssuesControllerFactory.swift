@@ -14,7 +14,7 @@ import Domain
 public func makeIssuesRouter(nav: NavigationController) -> IssuesViewController {
     let controller = IssuesViewController.instantiate()
     let presenter = IssuesPresenter(issuesView: WeakVarProxy(controller), alertView: WeakVarProxy(controller), loadingView: WeakVarProxy(controller), getIssues: makeRemoteGetIssues())
-    let router = IssuesRouter(nav: nav, detailFactory: {makeIssueDetailFactory(issueNumber: controller.issue!.number)})
+    let router = IssuesRouter(nav: nav, detailFactory: { makeIssueDetailFactory(issueNumber: controller.issue!.number) })
     controller.loadIssues = presenter.show
     
     controller.detail = router.goToDetail
